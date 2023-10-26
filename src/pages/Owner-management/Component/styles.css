@@ -4,10 +4,22 @@
     color: black;
     font-weight: 400;
 }
+.heading-text{
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;
+    color: black;
+    font-weight: 500;
+}
 .subs-box{
     background: rgba(254, 254, 253, 1);
     border-radius: 15px;
     padding: 10px 0px 10px 10px;
+}
+.card-title{
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;
+    color: black;
+    font-weight: 400;
 }
 .subs-text-below{
     font-family: 'Barlow', sans-serif;

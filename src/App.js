@@ -14,6 +14,7 @@ import AgentAllRanking from './pages/agent-management/AgentAllRanking';
 import AgentProfile from './pages/agent-management/AgentProfile';
 import Layout from './pages/Layout';
 import OwnerManagement from './pages/Owner-management';
+import SubscriptionRanking from './pages/Owner-management/subScreens/SubscriptionRanking';
 
 
 
@@ -43,6 +44,7 @@ const App = () => {
           <Route path='agent-ranking' element={<AgentAllRanking/>}/>
           <Route path='agent-profile' element={<AgentProfile/>}/>
           <Route path='owner-management' element={<OwnerManagement/>}/>
+          <Route path='sub-ranking' element={<SubscriptionRanking/>}/>
         </Route>
       </Routes>
     </Router>

@@ -6,7 +6,6 @@ import arrow_down from '../../components/images/arrow_drop_down.svg'
 import calendaricon from '../../components/images/calendar-icon.svg'
 import Subs from './Component/Subs';
 import FilterSearch from '../../components/FilterSearch';
-import ThreeDotsDropdown from '../../components/ThreeDotsDropdown';
 import TablePagination from '../../components/TablePagination';
 import { useNavigate } from 'react-router-dom';
 
@@ -213,13 +212,20 @@ const OwnerManagement = () => {
                            
                         </Col>
                         <Col xs={6} sm={6} md={3} lg={3} className='stat-section-each-col'>
-                            <Subs heading={'Subscription'} title={'VIP'}/>
+                            <Subs 
+                            type={'sub-main'}
+                            onclick={()=>navigate('/sub-ranking')}
+                            heading={'Subscription'} title={'VIP'}/>
                         </Col>
                         <Col xs={6} sm={6} md={3} lg={3} className='stat-section-each-col'>
-                            <Subs heading={'Booking'} title={'Book Now'}/>
+                            <Subs
+                            type={'sub-main'}
+                            heading={'Booking'} title={'Book Now'}/>
                         </Col>
                         <Col xs={6} sm={6} md={3} lg={3} className='stat-section-each-col'>
-                            <Subs heading={'EcoPoint'} title={'Entry'}/>
+                            <Subs
+                            type={'sub-main'}
+                            heading={'EcoPoint'} title={'Entry'}/>
                         </Col>
                     </Row>
             </div>

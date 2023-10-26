@@ -19,6 +19,8 @@ const BreadCrumb = ({page}) => {
                   'All Ranking' :
                   (page === 'agent-profile') ?
                     'Agent Profile' :
+                  (page === 'sub-ranking') ?
+                    'Subscription Ranking' :
                     null
             }
         </span>
