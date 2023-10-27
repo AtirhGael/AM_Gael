@@ -93,7 +93,7 @@ const Navigation = ({showSideNav, setShowSideNav, page, setPage}) => {
                 }
 
             <div>
-                <button className={`navigation-button ${(page === 'cohort-listing') ? 'active-navigation' : ''}`} onClick={() => {if(showSideNav){setShowSideNav(false)}; navigate('/owner-management')}}>
+                <button className={`navigation-button ${(page === 'owner-management') ? 'active-navigation' : ''}`} onClick={() => {if(showSideNav){setShowSideNav(false)}; navigate('/owner-management')}}>
                 <div className='each-navigation-grid-div'>
                         <img src={editicon} alt='Home Icon' className='navigation-icon'></img>
                         <span>Owner Management</span>

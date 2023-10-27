@@ -1,22 +1,33 @@
 import React from 'react'
-import { Col, Row } from 'react-bootstrap'
+import { Col, Row, Stack } from 'react-bootstrap'
 import './styles.css'
 import placeholderuserimage from '../../../components/images/placeholder.svg'
-import cupIcon from '../../../components/images/red-trophy.svg'
+import premuimTrophy from '../../../components/images/premuimTrophy.svg'
+import vipTrophy from '../../../components/images/vipTrophy.svg'
+import standardTrophy from '../../../components/images/standardTrophy.svg'
 
-const CardBody = () =>{
+const CardBody = ({imgType}) =>{
     return(
         <div>
             <Row style={{alignItems:'center'}}>
-                <Col xs={2} sm={2} md={2} lg={2}>
-                    <img src={cupIcon} alt='' style={{display:'-ms-grid'}}/>
+                <Col xs={2} sm={2} md={2} lg={2} >
+                    
+                    {imgType === 'VIP' && (
+                               <img src={vipTrophy} alt='' style={{display:'-ms-grid'}}/>
+                            )}
+                            {imgType === 'premuim' && (
+                                <img src={premuimTrophy} alt='' style={{display:'-ms-grid'}}/>
+                            )}
+                            {imgType === 'standard' && (
+                                <img src={standardTrophy} alt='' style={{display:'-ms-grid'}}/>
+                            )}
                 </Col>
                 <Col xs={7} sm={7} md={7} lg={7}>
                         <Row style={{alignItems:'center',paddingTop:5}}>
-                        <Col xs={12} lg={2} md={6}>
-                            <img src={placeholderuserimage} alt='' className='listing-table-placeholder-image'></img>
+                        <Col xs={12} lg={3} md={6}>
+                                <img src={placeholderuserimage} alt='' style={{height:35,width:35}}></img>
                         </Col>
-                        <Col xs={12} lg={10} md={6}>
+                        <Col xs={12} lg={9} md={6}>
                             <div className='subs-text'>John Peterson</div>
                             <div className='subs-text-below'>Carrefour Jouvence</div>
                             <div style={{color:'#4CAC3E'}}>100 Pickups</div>
@@ -32,7 +43,7 @@ const CardBody = () =>{
 }
 
 
-const Subs = ({heading,title,onclick,type,rightIcon,image}) => {
+const Subs = ({heading,title,onclick,type,rightIcon,image,imgType}) => {
   return (
     <>
       {type === 'sub-main'&&(
@@ -85,23 +96,46 @@ const Subs = ({heading,title,onclick,type,rightIcon,image}) => {
         {type === 'sub-ranking'&& (
             <div className='subs-box'>
                <Row >
-                    <Col xs={6} sm={6} md={6} lg={6}>
+               <Stack direction="horizontal" style={{justifyContent:'space-between'}}>
                         <div className='card-title'>{title}</div>
-                         </Col>
-                    <Col xs={6} sm={6} md={6} lg={6} style={{justifySelf:'end'}}>
                         {image?
                         <img src={rightIcon} alt='n' className='listing-table-placeholde'/>:null
                         }
-                    </Col>
+                </Stack>
+                    
                </Row>
-               <CardBody/>
-               <CardBody/>
-               <CardBody/>
-               <CardBody/>
-               <CardBody/>
-               <CardBody/>
-               <CardBody/>
-               <CardBody/>
+               <CardBody imgType={imgType}/>
+               <CardBody imgType={imgType} />
+               <CardBody imgType={imgType}/>
+               <CardBody imgType={imgType}/>
+               <CardBody imgType={imgType}/>
+            </div>
+        )}
+        {type === 'ecopoint'&& (
+            <div className='subs-box'>
+               <Row >
+                <Stack direction="horizontal" style={{justifyContent:'space-between'}}>
+                        <div className='card-title'>{title}</div>
+                        <img src={rightIcon} alt='' className='listing-table-placeholde'/>
+                </Stack>
+               </Row>
+               <CardBody imgType={imgType}/>
+               <CardBody imgType={imgType} />
+            </div>
+        )}
+        {type === 'booking'&& (
+            <div className='subs-box'>
+               <Row >
+                <Stack direction="horizontal" style={{justifyContent:'space-between'}}>
+                        <div className='card-title'>{title}</div>
+                        <img src={rightIcon} alt='' className='listing-table-placeholde'/>
+                </Stack>
+               </Row>
+               <CardBody imgType={'premuim'}/>
+               <CardBody imgType={'VIP'} />
+               <CardBody imgType={'standard'} />
+               <CardBody imgType={'VIP'} />
+               <CardBody imgType={'premuim'} />
             </div>
         )}
     </>

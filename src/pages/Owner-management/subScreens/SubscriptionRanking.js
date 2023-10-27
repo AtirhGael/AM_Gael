@@ -13,7 +13,7 @@ const SubscriptionRanking = () => {
         <Row>
             <Col xs={12} sm={12} md={6} lg={6} xl={6}> 
                 <div className='heading-text'>
-                        Subscription Ranking
+                    Subscription Ranking
                 </div>
             </Col>
             <Col xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -27,6 +27,7 @@ const SubscriptionRanking = () => {
                 heading={'VIP'}
                 image={true}
                 title={'VIP'}
+                imgType={'VIP'}
                 />
                 
             </Col>
@@ -35,10 +36,12 @@ const SubscriptionRanking = () => {
                 type={'sub-ranking'}
                 heading={'VIP'}
                 title={'Premuim'}
+                imgType={'premuim'}
                 />
             </Col>
             <Col xs={12} sm={12} md={6} lg={4} xl={4}>
                 <Subs 
+                imgType={'standard'}
                 title={'Standard'}
                 type={'sub-ranking'}
                 heading={'VIP'}/>

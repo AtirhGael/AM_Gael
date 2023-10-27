@@ -219,11 +219,13 @@ const OwnerManagement = () => {
                         </Col>
                         <Col xs={6} sm={6} md={3} lg={3} className='stat-section-each-col'>
                             <Subs
+                            onclick={()=>navigate('/booking-ranking')}
                             type={'sub-main'}
                             heading={'Booking'} title={'Book Now'}/>
                         </Col>
                         <Col xs={6} sm={6} md={3} lg={3} className='stat-section-each-col'>
                             <Subs
+                            onclick={()=>navigate('/ecopoint-ranking')}
                             type={'sub-main'}
                             heading={'EcoPoint'} title={'Entry'}/>
                         </Col>
@@ -243,8 +245,9 @@ const OwnerManagement = () => {
                             justifySelf:'end'
                         }}>
                         <button className='agent-listing-see-all-button' 
-                        // onClick={() => {setPage('agent-listing');
-                        //  navigate('/agent-listing')}}
+                        onClick={() => {
+                            // setPage('agent-listing');
+                         navigate('/owner-listing')}}
                         >See all</button></div>
                     </div>
                     <div className='agent-listing-table-div'>

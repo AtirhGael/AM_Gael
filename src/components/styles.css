@@ -451,6 +451,10 @@
 .agent-listing-row-status-div {
     background: rgba(0, 176, 116, 0.15);
 }
+.owner-listing-inactive{
+    background: #FF000026;
+}
+.owner-listing-inactive,
 .agent-listing-row-status-div,
 .trash-pickup-table-status-div {
     border-radius: 15px;

@@ -4,7 +4,7 @@ import { Dropdown } from 'react-bootstrap';
 import deleteicon from '../components/images/delete.svg';
 
 
-const ThreeDotsDropdown = ({navigate, setIsSuspendAgentModalVisible, page, setIsAddIdCertNumberModalVisible, setIsAgentAttendaceModalVisible, setIsDeleteModalVisible, setPage}) => {
+const ThreeDots = ({onClick, setIsSuspendAgentModalVisible, page, setIsAddIdCertNumberModalVisible, setIsAgentAttendaceModalVisible, setIsDeleteModalVisible, setPage}) => {
     const dropdownRef = useRef()
   return (
     <>
@@ -17,7 +17,7 @@ const ThreeDotsDropdown = ({navigate, setIsSuspendAgentModalVisible, page, setIs
       <Dropdown className='cohort-listing-table-dropdown'>
           <Dropdown.Toggle variant="success" id="dropdown-basic" className='cohort-listing-table-dropdown-button' ref={dropdownRef}></Dropdown.Toggle>
             <Dropdown.Menu>
-              {(page === 'agent-training') ? 
+              {/* {(page === 'agent-training') ? 
                 <>
                   <Dropdown.Item onClick={() => setIsAddIdCertNumberModalVisible(true)}>Add ID/Certificate Number</Dropdown.Item>
                   <Dropdown.Item onClick={() => setIsSuspendAgentModalVisible(true)}>Suspend Agent</Dropdown.Item>
@@ -27,10 +27,10 @@ const ThreeDotsDropdown = ({navigate, setIsSuspendAgentModalVisible, page, setIs
                   <Dropdown.Item onClick={() => {setPage('agent-profile'); navigate('/agent-profile')}}>View Profile</Dropdown.Item>
                   <Dropdown.Item onClick={() => setIsSuspendAgentModalVisible(true)}>Suspend Agent</Dropdown.Item>
                 </>
-              }
+              } */}
               {page==='owner-listing' &&(
                 <>
-                   <Dropdown.Item onClick={() => {setPage('agent-profile'); navigate('/agent-profile')}}>View Profile</Dropdown.Item>
+                   <Dropdown.Item onClick={onClick}>View Profile</Dropdown.Item>
                   <Dropdown.Item onClick={() => setIsSuspendAgentModalVisible(true)}>Suspend Owner</Dropdown.Item>
                   <Dropdown.Item onClick={() => setIsSuspendAgentModalVisible(true)}>Deactivate Reason</Dropdown.Item>
                 </>
@@ -42,4 +42,4 @@ const ThreeDotsDropdown = ({navigate, setIsSuspendAgentModalVisible, page, setIs
   )
 }
 
-export default ThreeDotsDropdown
+export default ThreeDots
