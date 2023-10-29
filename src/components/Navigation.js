@@ -19,6 +19,7 @@ import { useNavigate } from 'react-router-dom';
 const Navigation = ({showSideNav, setShowSideNav, page, setPage}) => {
     const navigate = useNavigate()
     const[buttonDropdownVisible, setIsButtonDropdownVisible] = useState(false)
+    
   return (
     <div className='side-navigation-block'>
         <img src={logo} alt='Logo' className='navigation-logo'></img>
@@ -93,13 +94,19 @@ const Navigation = ({showSideNav, setShowSideNav, page, setPage}) => {
                 }
 
             <div>
-                <button className={`navigation-button ${(page === 'owner-management') ? 'active-navigation' : ''}`} onClick={() => {if(showSideNav){setShowSideNav(false)}; navigate('/owner-management')}}>
+                <button className={`navigation-button ${(page === 'owner-management') ? 'active-navigation' : ''}`} 
+                onClick={() => {
+                    if(showSideNav){setShowSideNav(false)}; 
+                    setPage('owner-management'); 
+                    navigate('/owner-management')
+                }}>
                 <div className='each-navigation-grid-div'>
                         <img src={editicon} alt='Home Icon' className='navigation-icon'></img>
                         <span>Owner Management</span>
                 </div>
                     </button>
                 </div>
+                
             <div className='each-navigation-grid-div'>
                 <img src={editicon} alt='Home Icon' className='navigation-icon'></img>
                 <span>Zone Management</span>

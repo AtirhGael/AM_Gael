@@ -19,6 +19,7 @@ import EcopointRanking from './pages/Owner-management/subScreens/EcopointRanking
 import BookingRanking from './pages/Owner-management/subScreens/BookingRanking';
 import OwnerListing from './pages/Owner-management/subScreens/OwnerListing';
 import OwnerProfile from './pages/Owner-management/subScreens/OwnerProfile';
+import ActiveRequest from './pages/Owner-management/subScreens/ActiveRewuest';
 
 
 
@@ -47,12 +48,13 @@ const App = () => {
           <Route path='agent-training' element={<AgentTraining/>}/>
           <Route path='agent-ranking' element={<AgentAllRanking/>}/>
           <Route path='agent-profile' element={<AgentProfile/>}/>
-          <Route path='owner-management' element={<OwnerManagement setPage={'owner-management'}/>}/>
+          <Route path='owner-management' element={<OwnerManagement />}/>
           <Route path='sub-ranking' element={<SubscriptionRanking/>}/>
           <Route path='ecopoint-ranking' element={<EcopointRanking/>}/>
           <Route path='booking-ranking' element={<BookingRanking/>}/>
           <Route path='owner-listing' element={<OwnerListing />}/>
           <Route path='owner-profile' element={<OwnerProfile/>}/>
+          <Route path='active-request' element={<ActiveRequest/>}/>
         </Route>
       </Routes>
     </Router>

@@ -10,6 +10,7 @@ import TablePagination from '../../components/TablePagination';
 import { useNavigate } from 'react-router-dom';
 
 import placeholderuserimage from '../../components/images/placeholder.svg'
+import HomeCharts from '../../components/HomeCharts';
 
 const OwnerManagement = () => {
     const navigate = useNavigate()
@@ -282,52 +283,8 @@ const OwnerManagement = () => {
                         <TablePagination/>
                     </div>
                 </Col>
-                <Col xs={12} sm={12} md={6} lg={6} style={{marginTop:25}}>
-                    <div style={{fontWeight:'bolder' ,fontFamily:'Barlow'}}> Ongoing Request </div>
-                        <div className='agent-listing-upper-div'>
-                        <FilterSearch/>
-                        <div style={{
-                            paddingTop:26,
-                            justifySelf:'end'
-                        }}>
-                            <button className='agent-listing-see-all-button' 
-                            // onClick={() => {setPage('agent-listing');
-                            //  navigate('/agent-listing')}}
-                            >See all</button>
-
-                        </div>
-                    </div>
-                    <div className='agent-listing-table-div'>
-                        <Table responsive className='agent-listing-table'>
-                            <thead className='agent-listing-table-head'>
-                                <tr>
-                                    <th style={{borderRadius: '10px 0px 0px 10px'}}></th>
-                                    <th>#</th>
-                                    <th>Photo</th>
-                                    <th>Name</th>
-                                    <th> ID</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody className='agent-listing-table-body'>
-                                <tr>
-                                    <td className='listing-checkbox-td'>
-                                    <Form>
-                                        <Form.Check type='checkbox'></Form.Check>
-                                    </Form>
-                                    </td>
-                                    <td>1</td>
-                                    <td>
-                                        <img src={placeholderuserimage} alt='' className='listing-table-placeholder-image'></img>
-                                    </td>
-                                    <td>John Peterson</td>
-                                    <td>CTA01234567</td>
-                                    <td><div className='agent-listing-row-status-div'>Active</div></td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                        <TablePagination/>
-                    </div>
+                <Col xs={12} sm={12} md={6} lg={6} style={{marginTop:45}}>
+                   <HomeCharts/>
                 </Col>
         </Row>
 

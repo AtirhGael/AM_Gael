@@ -1,15 +1,18 @@
 import React from 'react'
-import BreadCrumb from '../../../components/BreadCrumb'
 import { Col, Row } from 'react-bootstrap'
 import Dropown from '../../../components/Dropown'
 import '../Component/styles.css'
 import Subs from '../Component/Subs'
+import Bread from '../../../components/Bread'
 
 
 const SubscriptionRanking = () => {
   return (
     <div>
-        <BreadCrumb page={'sub-ranking'}/>
+        <Bread
+        prevPage={'Agent Managment'}
+        mainPage={'Subscription Ranking'}
+        />
         <Row>
             <Col xs={12} sm={12} md={6} lg={6} xl={6}> 
                 <div className='heading-text'>

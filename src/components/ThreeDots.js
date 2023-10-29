@@ -4,7 +4,7 @@ import { Dropdown } from 'react-bootstrap';
 import deleteicon from '../components/images/delete.svg';
 
 
-const ThreeDots = ({onClick, setIsSuspendAgentModalVisible, page, setIsAddIdCertNumberModalVisible, setIsAgentAttendaceModalVisible, setIsDeleteModalVisible, setPage}) => {
+const ThreeDots = ({onClick, setIsSuspendAgentModalVisible, page, setDeactivate, setIsAgentAttendaceModalVisible, setIsDeleteModalVisible, setPage}) => {
     const dropdownRef = useRef()
   return (
     <>
@@ -32,7 +32,7 @@ const ThreeDots = ({onClick, setIsSuspendAgentModalVisible, page, setIsAddIdCert
                 <>
                    <Dropdown.Item onClick={onClick}>View Profile</Dropdown.Item>
                   <Dropdown.Item onClick={() => setIsSuspendAgentModalVisible(true)}>Suspend Owner</Dropdown.Item>
-                  <Dropdown.Item onClick={() => setIsSuspendAgentModalVisible(true)}>Deactivate Reason</Dropdown.Item>
+                  <Dropdown.Item onClick={() => setDeactivate(true)}>Deactivation Reason</Dropdown.Item>
                 </>
               ) }
                             

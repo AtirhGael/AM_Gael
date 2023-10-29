@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Container, Modal, Row, Col, Dropdown, Table, Form } from 'react-bootstrap'
+import { Container, Modal, Row, Col, Dropdown, Table, Form, Stack } from 'react-bootstrap'
 import closeicon from '../../../components/images/close.svg'
 import placeholderagentimage from '../../../components/images/Ellipse 110.svg'
 import callicon from '../../../components/images/call.svg'
@@ -22,6 +22,8 @@ import gainarrowup from '../../../components/images/gain_arrow_drop_up.svg'
 import availabilityarrowback from '../../../components/images/availability-arrow_back.svg'
 import searchicon from '../../../components/images/search.svg'
 import filtericon from '../../../components/images/filter_list.svg'
+import HomeCharts from '../../../components/HomeCharts'
+import Subs from '../Component/Subs'
 
 
 
@@ -168,8 +170,10 @@ const OwnerProfile = () => {
 
                         <div className='agent-bookings-stats-content-div'>
                             <Row>
-                                <Col xs={6} sm={6} md={3} lg={3} className='stat-section-each-col'>
-                                    <div className='stat-section-div'>
+                                <Col xs={6} sm={6} md={6} lg={6} className='stat-section-each-col'>
+                                    <Row style={{marginBottom:10}}>
+                                        <Col  xs={12} sm={12} md={6} lg={6}> 
+                                        <div className='stat-section-div'>
                                         <Row>
                                             <Col lg={3} md={4} sm={4} xs={4}>
                                                 <div className='agent-stat-button-icon-div'>
@@ -193,9 +197,9 @@ const OwnerProfile = () => {
                                             </Col>
                                         </Row>
                                     </div>
-                                </Col>
-                                <Col xs={6} sm={6} md={3} lg={3} className='stat-section-each-col'>
-                                    <div className='stat-section-div'>
+                                        </Col>
+                                        <Col  xs={12} sm={12} md={6} lg={6}> 
+                                        <div className='stat-section-div'>
                                         <Row>
                                             <Col lg={3} md={4} sm={4} xs={4}>
                                                 <div className='agent-stat-button-icon-div'>
@@ -218,10 +222,12 @@ const OwnerProfile = () => {
                                                 </div>
                                             </Col>
                                         </Row>
-                                    </div>
-                                </Col>
-                                <Col xs={6} sm={6} md={3} lg={3} className='stat-section-each-col'>
-                                    <div className='stat-section-div'>
+                                        </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col  xs={12} sm={12} md={6} lg={6}> 
+                                        <div className='stat-section-div'>
                                         <Row>
                                             <Col lg={3} md={4} sm={4} xs={4}>
                                                 <div className='agent-stat-button-icon-div'>
@@ -236,42 +242,33 @@ const OwnerProfile = () => {
                                         </Row>
                                         <Row>
                                             <Col lg={3} md={4} sm={4} xs={4}>
-                                                <p className='agent-stat-number-paragraph'>13</p>
+                                                <p className='agent-stat-number-paragraph'>30k</p>
                                             </Col>
                                             <Col lg={9} md={8} sm={8} xs={8}>
                                                 <div className='status-stat-div'>
-                                                    <p className='agent-stat-percentages-decrease'><img src={arrow_down} alt='' className='gain-arrow-up'></img> 10% increase</p>
+                                                    <p className='agent-stat-percentages-decrease '><img src={arrow_down} alt='' className='gain-arrow-up'></img> 10% Decrease</p>
                                                 </div>
                                             </Col>
                                         </Row>
                                     </div>
+                                        </Col>
+                                        <Col  xs={12} sm={12} md={6} lg={6}> 
+                                       
+
+                                       {/* to be edited */}
+                                       <Subs
+                                       type={'floadCard'}
+                                       />
+                                        </Col>
+                                    </Row>
+                                   
+                                    
                                 </Col>
-                                <Col xs={6} sm={6} md={3} lg={3} className='stat-section-each-col'>
-                                    <div className='stat-section-div'>
-                                        <Row>
-                                            <Col lg={3} md={4} sm={4} xs={4}>
-                                                <div className='agent-stat-button-icon-div'>
-                                                    <img src={bluestatbutton} alt='Agent Stat Button Icon' className='agent-stat-button-icon'></img>
-                                                </div>
-                                            </Col>
-                                            <Col lg={9} md={8} sm={8} xs={8}>
-                                                <div className='status-stat-div'>
-                                                    <p className='total-paragraph'>Earnings</p>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col lg={3} md={4} sm={4} xs={4}>
-                                                <p className='agent-stat-number-paragraph'>60k</p>
-                                            </Col>
-                                            <Col lg={9} md={8} sm={8} xs={8}>
-                                                <div className='status-stat-div'>
-                                                    <p className='agent-stat-percentages'><img src={gainarrowup} alt='' className='gain-arrow-up'></img> 10% increase</p>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                    </div>
+                                <Col xs={6} sm={6} md={6} lg={6} >
+                                    <HomeCharts marginTop={-6}/>
                                 </Col>
+
+                                
                             </Row>
                         </div>
 
@@ -279,12 +276,10 @@ const OwnerProfile = () => {
 
                             {/*probably make this a component*/}
                             <div style={{fontWeight:'bolder' ,fontFamily:'Barlow' ,paddingTop:'30px'}} > Pickup Details</div>
-                            
-                            <Container>
                                 <Row>
                                     <Col xs={12} sm={12} md={6} lg={6} xl={6}>
-                                    <div className='agent-listing-upper-div'>
-                                        <Col xs={12} md={5} lg={7}>
+                                    <Stack direction="horizontal" style={{justifyContent:'space-between'}}>
+                                        
                                         <div className='listing-actions-div'>
                                             <button className='listing-filter-button'>
                                                 <img src={filtericon} alt='Filter Icon' className='listing-filter-icon'></img>
@@ -297,8 +292,7 @@ const OwnerProfile = () => {
                                                 </button>
                                             </div>
                                         </div>
-                                        </Col>
-                                        <Col xs={12} md={5} lg={5}>
+                                        
                                             <div style={{
                                                 paddingTop:26,
                                                 justifySelf:'end'
@@ -308,8 +302,7 @@ const OwnerProfile = () => {
                                                 // setPage('agent-listing');
                                             //  navigate('/owner-listing')}}
                                             >See all</button></div>
-                                        </Col>
-                                        </div>
+                                        </Stack>
                                     <div className='agent-listing-table-div'>
                                 {/*probably make this a component*/}
                                 <Table responsive className='agent-listing-table trash-pickup-listing-table'>
@@ -453,7 +446,7 @@ const OwnerProfile = () => {
                                         </div>  
                                     </Col>
                                 </Row>
-                            </Container>
+                          
                             
                         </div>
 

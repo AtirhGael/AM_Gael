@@ -1,5 +1,5 @@
 import React from 'react'
-import BreadCrumb from '../../../components/BreadCrumb'
+import Bread from '../../../components/Bread'
 import Subs from '../Component/Subs'
 import { Col, Container, Row } from 'react-bootstrap'
 import goldMedal from '../../../components/images/star.svg'
@@ -8,11 +8,14 @@ import Dropown from '../../../components/Dropown'
 const EcopointRanking = () => {
   return (
     <div>
-        <BreadCrumb page={'sub-ranking'}/>
+        <Bread
+        prevPage={'Agent Management'}
+        mainPage={'EcoPoint Ranking'}
+        />
         <Row style={{alignItems:'center',paddingBottom:20}}>
             <Col xs={12} sm={12} md={6} lg={6} xl={6}> 
                 <div className='heading-text'>
-                    Subscription Ranking
+                EcoPoint Ranking
                 </div>
             </Col>
             <Col xs={12} sm={12} md={6} lg={6} xl={6}>

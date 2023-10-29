@@ -129,6 +129,25 @@
     background: rgba(45, 156, 219, 0.2);
     border-radius: 50%;
 }
+.agent-stat-button-icon-div-owner {
+    width: 35px;
+    height: 35px;
+    background: #00B07426;
+    border-radius: 50%;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.agent-stat {
+    width: 25px;
+    height: 25px;
+    background: #2ED6A326;
+    border-radius: 50%;
+    margin: auto;
+}
 .status-stat-div {
     padding-left: 10px;
 }
@@ -139,6 +158,7 @@
     line-height: 18px;
     letter-spacing: 0px;
 }
+
 .stat-section-div {
     background: rgba(254, 254, 253, 1);
     border-radius: 15px;
@@ -1240,6 +1260,7 @@
 .agent-all-ranking-stats-each-content-div,
 .most-performant-agents-bar-div,
 .total-book-now-div,
+.home-div-with-cart,
 .cohort-demographic-each-stat-div {
     flex: 1;
 }
@@ -1664,6 +1685,14 @@
     padding: 10px 15px;
     margin-top: 20px;
 }
+.home-div-with-cart {
+    background: rgba(254, 254, 253, 1);
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    display: flex;
+    /* justify-content: space-between; */
+}
 .demographics-map {
     width: 100%;
     object-fit: cover;
@@ -1671,7 +1700,34 @@
 .cohort-demographic-pie-chart-div {
     display: flex;
     justify-content: center;
-    max-height: 200px !important;
+    max-height: 250px !important;
+}
+.main-left-section-pie-chart{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* display: flex; */
+    /* gap: 5px; */
+
+}
+.main-left-section-pie-chart-flex{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.main-left-section-pie-chart-box{
+    height: 25px;
+    width: 25px;
+    border-radius: 8px;
+    /* background-color: #212121; */
+}
+.main-left-section-pie-chart-text{
+    font: 'Barlow';
+    font-family: 'Barlow';
+    font-weight: 400;
 }
 tspan {
     font-size: 5px !important;

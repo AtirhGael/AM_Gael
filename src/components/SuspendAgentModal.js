@@ -27,3 +27,4 @@ const SuspendAgentModal = ({isSuspendAgentModalVisible, setIsSuspendAgentModalVi
 }
 
 export default SuspendAgentModal
+

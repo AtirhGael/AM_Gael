@@ -10,6 +10,8 @@ import star from '../../../components/images/star.svg'
 import placeholderuserimage from '../../../components/images/placeholder.svg'
 import { useNavigate } from 'react-router-dom';
 import ThreeDots from '../../../components/ThreeDots';
+import Bread from '../../../components/Bread';
+import DeactivationReason from '../../../components/ModalDeactivationReason';
 
 
 const ActiveTable = ({type}) =>{
@@ -23,10 +25,14 @@ const OwnerListing = ({setPage}) => {
     const page = 'owner-listing'
     const[isSuspendAgentModalVisible, setIsSuspendAgentModalVisible] = useState(false)
     const[isDeleteModalVisible, setIsDeleteModalVisible] = useState(false)
+    const [deactivate,setDeactivate] = useState(false)
   
   return (
     <div>
-      <BreadCrumb page={'owner-listing'}/>
+       <Bread
+        prevPage={'Agent Management'}
+        mainPage={'Owner Listing'}
+        />
 
       <div className='listing-body-upper-div'>
         <FilterSearch/>
@@ -79,6 +85,7 @@ const OwnerListing = ({setPage}) => {
                           setIsDeleteModalVisible={setIsDeleteModalVisible}
                           page={page}
                           setPage={setPage}
+                          setDeactivate={setDeactivate}
                         />                
                       </td>
                   </tr>
@@ -103,11 +110,13 @@ const OwnerListing = ({setPage}) => {
                      <ActiveTable type={'Inactive'}/>
                       <td>
                         <ThreeDots 
-                          navigate={navigate} 
-                          setIsSuspendAgentModalVisible={setIsSuspendAgentModalVisible}
-                          setIsDeleteModalVisible={setIsDeleteModalVisible}
-                          page={page}
-                          setPage={setPage}
+                         navigate={navigate} 
+                         onClick={()=>navigate('/owner-profile')}
+                         setIsSuspendAgentModalVisible={setIsSuspendAgentModalVisible}
+                         setIsDeleteModalVisible={setIsDeleteModalVisible}
+                         page={page}
+                         setPage={setPage}
+                         setDeactivate={setDeactivate}
                         />                
                       </td>
                   </tr>
@@ -132,11 +141,13 @@ const OwnerListing = ({setPage}) => {
                      <ActiveTable type={'Inactive'}/>
                       <td>
                         <ThreeDots 
-                          navigate={navigate} 
-                          setIsSuspendAgentModalVisible={setIsSuspendAgentModalVisible}
-                          setIsDeleteModalVisible={setIsDeleteModalVisible}
-                          page={page}
-                          setPage={setPage}
+                         navigate={navigate} 
+                         onClick={()=>navigate('/owner-profile')}
+                         setIsSuspendAgentModalVisible={setIsSuspendAgentModalVisible}
+                         setIsDeleteModalVisible={setIsDeleteModalVisible}
+                         page={page}
+                         setPage={setPage}
+                         setDeactivate={setDeactivate}
                         />                
                       </td>
                   </tr>
@@ -161,11 +172,13 @@ const OwnerListing = ({setPage}) => {
                      <ActiveTable type={'Inactive'}/>
                       <td>
                         <ThreeDots 
-                          navigate={navigate} 
-                          setIsSuspendAgentModalVisible={setIsSuspendAgentModalVisible}
-                          setIsDeleteModalVisible={setIsDeleteModalVisible}
-                          page={page}
-                          setPage={setPage}
+                         navigate={navigate} 
+                         onClick={()=>navigate('/owner-profile')}
+                         setIsSuspendAgentModalVisible={setIsSuspendAgentModalVisible}
+                         setIsDeleteModalVisible={setIsDeleteModalVisible}
+                         page={page}
+                         setPage={setPage}
+                         setDeactivate={setDeactivate}
                         />                
                       </td>
                   </tr>
@@ -190,10 +203,13 @@ const OwnerListing = ({setPage}) => {
                      <ActiveTable type={'Active'}/>
                       <td>
                         <ThreeDots
-                        navigate={navigate} 
-                        setIsSuspendAgentModalVisible={setIsSuspendAgentModalVisible}
-                        setIsDeleteModalVisible={setIsDeleteModalVisible}
-                        page={'owner-listing'}
+                       navigate={navigate} 
+                       onClick={()=>navigate('/owner-profile')}
+                       setIsSuspendAgentModalVisible={setIsSuspendAgentModalVisible}
+                       setIsDeleteModalVisible={setIsDeleteModalVisible}
+                       page={page}
+                       setPage={setPage}
+                       setDeactivate={setDeactivate}
                         />
                                       
                       </td>
@@ -207,6 +223,11 @@ const OwnerListing = ({setPage}) => {
           isDeleteModalVisible={isDeleteModalVisible} 
           setIsDeleteModalVisible={setIsDeleteModalVisible}
           page={page}
+        />
+        <DeactivationReason
+        deactivate={deactivate}
+        setDeactivate={setDeactivate}
+    
         />
         <SuspendAgentModal 
           isSuspendAgentModalVisible={isSuspendAgentModalVisible} 
