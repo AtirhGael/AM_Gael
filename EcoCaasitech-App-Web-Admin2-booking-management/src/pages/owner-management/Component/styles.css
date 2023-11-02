@@ -1,0 +1,76 @@
+.agent-stat-button-icon-div-two {
+    width: 40px;
+    height: 40px;
+    background: #00B07426;
+    border-radius: 50%;
+}
+.subs-text{
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;
+    color: black;
+    font-weight: 400;
+}
+.heading-text{
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;
+    color: black;
+    font-weight: 500;
+}
+.subs-box{
+    background: rgba(254, 254, 253, 1);
+    border-radius: 15px;
+    padding: 10px 0px 10px 10px;
+}
+.card-title{
+    font-family: 'Barlow', sans-serif;
+    font-size: 22px;
+    color: black;
+    font-weight: 400;
+}
+.subs-text-below{
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    color: #00000080;
+    font-weight: 400;
+    
+}
+.flex-container {
+    display: flex;
+    background-color: white !important;
+    position: relative; /* Necessary to position child elements */
+  }
+  
+  .centered-box {
+    /* background-color: black; */
+    background-color: #00000080;
+    position: absolute;
+    top: 0;
+    bottom: 1;
+    left: 0;
+    right: 0;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: -20; */
+    z-index: 1;
+    /* margin-bottom: -5px; */
+    width: 50%;
+    height: 50%;
+  }
+
+/* box-sizing border-box
+color rgb(33, 37, 41)
+display block
+font-family Barlow, sans-serif
+font-size 17px
+font-weight 400
+height 36px
+letter-spacing normal
+line-height 18px
+margin-block-end 16px
+margin-block-start 5px
+margin-bottom 16px
+margin-inline-end 0px
+margin-inline-start 0px
+margin-top 5px
+text-align start */
