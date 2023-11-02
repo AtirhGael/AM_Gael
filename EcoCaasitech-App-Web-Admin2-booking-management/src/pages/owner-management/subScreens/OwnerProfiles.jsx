@@ -151,16 +151,28 @@ const OwnerProfile = () => {
                     <div className='agent-status-div'>
                         <p className='agent-overview-status-heading'>Status</p>
                         <Form>
-                            <div className='agent-status-radio-group-div'>
-                                <div className='agent-status-radio-item-div'>
+                            <div style={{
+                                display:'flex',
+                                gap:15
+                            }}>
+                                <div style={{
+                                display:'flex',
+                                gap:10
+                            }}>
                                     <Form.Check type="radio" aria-label="radio 1" />
                                     <span>Activated</span>
                                 </div>
-                                <div className='agent-status-radio-item-div'>
+                                <div style={{
+                                display:'flex',
+                                gap:10
+                            }}>
                                     <Form.Check type="radio" aria-label="radio 2" />
                                     <span>Deactivated</span>
                                 </div>
-                                <div className='agent-status-radio-item-div'>
+                                <div style={{
+                                display:'flex',
+                                gap:10
+                            }}>
                                     <Form.Check type="radio" aria-label="radio 3" />
                                     <span>Suspended</span>
                                 </div>

@@ -135,6 +135,10 @@ const AgentProfile = () => {
                                 row
                                 aria-labelledby="demo-row-radio-buttons-group-label"
                                 name="row-radio-buttons-group"
+                                style={{
+                                    display:'flex',
+                                    flexDirection:'row'
+                                }}
                             >
                                 <FormControlLabel value="Activated" control={<Radio sx={{color: 'black', '&.Mui-checked': {color: 'black',}, }}/>} label="Activated" />
                                 <FormControlLabel value="Deactivated" control={<Radio sx={{color: 'black', '&.Mui-checked': {color: 'black',}, }}/>} label="Deactivated" />

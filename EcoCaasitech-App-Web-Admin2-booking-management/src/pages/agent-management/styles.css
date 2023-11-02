@@ -68,6 +68,22 @@
     border-radius: 15px;
     padding: 10px 10px 20px 10px;
 }
+.with-bottom-layer {
+    background: rgba(254, 254, 253, 1);
+    border-radius: 15px;
+    padding: 10px 10px 20px 10px;
+}
+.with-bottom-layer ::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px; 
+    background-color: #4CAC3E;
+    /* border-radius: 15px; */
+    /* border-top-right-radius: 20px; */
+}
 .agent-stat-number-paragraph {
     font-size: 32px;
     font-weight: 700;

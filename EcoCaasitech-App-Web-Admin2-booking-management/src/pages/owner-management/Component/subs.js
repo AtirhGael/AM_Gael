@@ -144,7 +144,7 @@ const Subs = ({heading,title,onclick,type,rightIcon,image,imgType}) => {
             </div>
         )}
         {type ==='floadCard' && (
-             <div className='stat-section-div' style={{position:'relative'}}>
+             <div className='with-bottom-layer' style={{position:'relative'}}>
              <div style={{
                 color:'#fff',
                 backgroundColor:'#4CAC3EB2',
@@ -155,13 +155,13 @@ const Subs = ({heading,title,onclick,type,rightIcon,image,imgType}) => {
                 fontFamily:"Balow",
                 fontWeight:700,
                 width:'50%',
-                // position:'absolute'
+                // position:'absolute',
                 marginLeft:'auto',
                 marginRight:'auto'
                 }}>
                 EcoPoint Level Entry
              </div>
-            <div style={{display:'flex',position:'relative',}}>
+            <div style={{display:'flex'}}>
                 <div style={{display:'flex',gap:25,alignItems:'center'}}>
                 <div style={{
                     height:40,
@@ -182,7 +182,7 @@ const Subs = ({heading,title,onclick,type,rightIcon,image,imgType}) => {
                     width:80,
                     position:'absolute',
                     right:0,
-                    top:-43,
+                    top:1,
                 }}/>
             </div>
             <div style={{display:'flex',justifyContent:'space-between',paddingTop:5,alignItems:'center'}}>
