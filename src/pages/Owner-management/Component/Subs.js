@@ -1,61 +1,57 @@
-import React, { useEffect,useState } from 'react'
+import React from 'react'
+import { Col, Row, Stack } from 'react-bootstrap'
 import './styles.css'
-import placeholderuserimage from '../../../assets/images/placeholder.svg'
-import premuimTrophy from '../../../assets/icons/premuimTrophy.svg'
-import vipTrophy from '../../../assets/icons/vipTrophy.svg'
-import standardTrophy from '../../../assets/icons/standardTrophy.svg'
-import gift from '../../../assets/icons/gift.svg'
-import PeopleIcon from '@mui/icons-material/People';
-import { ArrowUpward } from '@mui/icons-material'
-import LocalParkingIcon from '@mui/icons-material/LocalParking';
-import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import placeholderuserimage from '../../../components/images/placeholder.svg'
+import premuimTrophy from '../../../components/images/premuimTrophy.svg'
+import vipTrophy from '../../../components/images/vipTrophy.svg'
+import standardTrophy from '../../../components/images/standardTrophy.svg'
+import persona from '../../../components/images/personal.svg'
+import Icons from '../../../components/Icons'
 
-import { Stack,Grid } from '@mui/material'
 
 const CardBody = ({imgType}) =>{
     return(
         <div>
-           <Grid container style={{alignItems:'center',paddingBottom:10,paddingLeft:10,paddingRight:10}}>
-                <Grid item xs={2} sm={2} md={2} lg={2}>
+            <Row style={{alignItems:'center',paddingBottom:10}}>
+                <Col xs={2} sm={2} md={2} lg={2} >
                     {imgType === 'VIP' && (
-                        <img src={vipTrophy} alt='' style={{display:'-ms-grid',height:24,width:24}}/>
-                    )}
-                    {imgType === 'premuim' && (
-                        <img src={premuimTrophy} alt='' style={{display:'-ms-grid',height:24,width:24}}/>
-                    )}
-                    {imgType === 'standard' && (
-                        <img src={standardTrophy} alt='' style={{display:'-ms-grid'}}/>
-                    )}
-                </Grid>
-                <Grid item xs={7} sm={7} md={7} lg={8}>
-                    <Grid container style={{paddingTop:5,alignItems:'center'}}>
-                        <Grid item xs={12} lg={3} md={6}>
-                            <img src={placeholderuserimage} alt='' style={{height:45,width:35}}></img>
-                        </Grid>
-                        <Grid item xs={12} lg={9} md={6}>
+                               <img src={vipTrophy} alt='' style={{display:'-ms-grid',height:24,width:24}}/>
+                            )}
+                            {imgType === 'premuim' && (
+                                <img src={premuimTrophy} alt='' style={{display:'-ms-grid',height:24,width:24}}/>
+                            )}
+                            {imgType === 'standard' && (
+                                <img src={standardTrophy} alt='' style={{display:'-ms-grid'}}/>
+                            )}
+                </Col>
+                <Col xs={7} sm={7} md={7} lg={7}>
+                        <Row style={{paddingTop:5,alignItems:'center'}}>
+                        <Col xs={12} lg={3} md={6}>
+                                <img src={placeholderuserimage} alt='' style={{height:45,width:35}}></img>
+                        </Col>
+                        <Col xs={12} lg={9} md={6}>
                             <div className='subs-text'>John Peterson</div>
-                            <div className='image-name-date-id-para'>Carrefour Jouvence</div>
+                            <div className='subs-text-below'>Carrefour Jouvence</div>
                             <div style={{color:'#4CAC3E'}}>100 Pickups</div>
-                        </Grid>
-                    </Grid>
-                </Grid>
-                    <Grid item xs={3} sm={3} md={3} lg={2} sx={{justifyContent:'center',alignSelf:'center'}}>
-                        <div style={{color:'#0D77B9'}}>100K</div>
-                    </Grid>
-            </Grid>
+                        </Col>
+                    </Row>
+                </Col>
+                <Col xs={3} sm={3} md={3} lg={3}>
+                    <div style={{color:'#0D77B9'}}>100K</div>
+                </Col>
+            </Row>
         </div>
     )
 }
 
 
-const Subs = ({heading,title,onclick,type,rightIcon,image,imgType,ranking}) => {
-   
-    
+const Subs = ({heading,title,onclick,type,rightIcon,image,imgType}) => {
   return (
     <>
       {type === 'sub-main'&&(
         <div className='subs-box'>
-            <Stack direction="horizontal" style={{justifyContent:'space-between',paddingRight:5}}>
+            <Row style={{paddingRight:5}}>
+            <Stack direction="horizontal" style={{justifyContent:'space-between'}}>
                         <div>
                             <div className='subs-text'>{heading}</div>
                                 <div style={{
@@ -70,54 +66,47 @@ const Subs = ({heading,title,onclick,type,rightIcon,image,imgType,ranking}) => {
                         className='add-an-agent-button'>All Rankings</button>
                 </Stack>
                
-                {/* {ranking? ranking.map((item,id)=>(
-                                        <Grid container key={id} style={{alignItems:'center',paddingTop:5}}>
-                                        <Grid item xs={2} lg={2} md={2}>
-                                            <img src={item.profile_photo_url?item.profile_photo_url:placeholderuserimage} alt='' className='listing-table-placeholder-image'></img>
-                                        </Grid>
-                                        <Grid item xs={10} lg={10} md={10}>
-                                            <div className='subs-text'>{item.first_name} {item.last_name}</div>
-                                            <div className='subs-text-below'>{item.country_name}</div>
-                                        </Grid>
-                                    </Grid>
-                                )): */}
-                                <Grid container  style={{alignItems:'center',paddingTop:5}}>
-                                        <Grid item xs={2} lg={2} md={2}>
-                                            <img src={placeholderuserimage} alt='' className='listing-table-placeholder-image'></img>
-                                        </Grid>
-                                        <Grid item xs={10} lg={10} md={10}>
-                                            <div className='subs-text'>John Wick</div>
-                                            <div className='subs-text-below'>Cameroon</div>
-                                        </Grid>
-                                    </Grid>
-                                {/* } */}
+            </Row>
+            <Row style={{alignItems:'center',paddingTop:5}}>
+                <Col xs={12} lg={2} md={6}>
+                    <img src={placeholderuserimage} alt='' className='listing-table-placeholder-image'></img>
+                </Col>
+                <Col xs={12} lg={10} md={6}>
+                    <div className='subs-text'>John Peterson</div>
+                    <div className='subs-text-below'>Carrefour Jouvence</div>
+                </Col>
+            </Row>
+            <Row style={{alignItems:'center',paddingTop:5}}>
+                <Col xs={12} lg={2} md={6}>
+                    <img src={placeholderuserimage} alt='' className='listing-table-placeholder-image'></img>
+                </Col>
+                <Col xs={12} lg={10} md={6}>
+                    <div className='subs-text'>John Peterson</div>
+                    <div className='subs-text-below'>Carrefour TKC</div>
+                </Col>
+            </Row>
+            <Row style={{alignItems:'center',paddingTop:5}}>
+                <Col xs={12} lg={2} md={6}>
+                    <img src={placeholderuserimage} alt='' className='listing-table-placeholder-image'></img>
+                </Col>
+                <Col xs={12} lg={10} md={6}>
+                    <div className='subs-text'>John Peterson</div>
+                    <div className='subs-text-below'>Carrefour RoundPoint</div>
+                </Col>
+            </Row>
         </div>
         )}
         {type === 'sub-ranking'&& (
             <div className='subs-box'>
+               <Row >
                <Stack direction="horizontal" style={{justifyContent:'space-between'}}>
                         <div className='card-title'>{title}</div>
                         {image?
-                        <img src={gift} alt='n' style={{paddingLeft:10}} />:null
+                        <img src={rightIcon} alt='n' className='listing-table-placeholde'/>:null
                         }
                 </Stack>
-               <CardBody imgType={imgType}/>
-               <CardBody imgType={imgType} />
-               <CardBody imgType={imgType}/>
-               <CardBody imgType={imgType}/>
-               <CardBody imgType={imgType}/>
-            </div>
-        )}
-        {type === 'sub-ranking-with-image'&& (
-            <div className='subs-box'>
-               <Stack direction="horizontal" style={{position: 'relative',paddingTop:13,paddingBottom:5}}>
-                        <div className='card-title'>{title}</div>
-                        
-                            {image?
-                            <img src={gift} alt='n' style={{position: 'absolute',right: 0,}} height={70} width={80} />:null}
-                     
-                       
-                </Stack>
+                    
+               </Row>
                <CardBody imgType={imgType}/>
                <CardBody imgType={imgType} />
                <CardBody imgType={imgType}/>
@@ -126,24 +115,25 @@ const Subs = ({heading,title,onclick,type,rightIcon,image,imgType,ranking}) => {
             </div>
         )}
         {type === 'ecopoint'&& (
-            <div className='subs-box-ecopoint'>
+            <div className='subs-box'>
+               <Row >
                 <Stack direction="horizontal" style={{justifyContent:'space-between'}}>
                         <div className='card-title'>{title}</div>
-                        <img src={rightIcon} alt='' style={{height:70,width:70}}/>
+                        <img src={rightIcon} alt='' className='listing-table-placeholde'/>
                 </Stack>
-               
+               </Row>
                <CardBody imgType={imgType}/>
                <CardBody imgType={imgType} />
             </div>
         )}
         {type === 'booking'&& (
             <div className='subs-box'>
-              
+               <Row >
                 <Stack direction="horizontal" style={{justifyContent:'space-between'}}>
                         <div className='card-title'>{title}</div>
                         <img src={rightIcon} alt='' className='listing-table-placeholde'/>
                 </Stack>
-             
+               </Row>
                <CardBody imgType={'premuim'}/>
                <CardBody imgType={'VIP'} />
                <CardBody imgType={'standard'} />
@@ -152,7 +142,7 @@ const Subs = ({heading,title,onclick,type,rightIcon,image,imgType,ranking}) => {
             </div>
         )}
         {type ==='floadCard' && (
-             <div className='with-bottom-layer' style={{position:'relative'}}>
+             <div className='stat-section-div' style={{position:'relative'}}>
              <div style={{
                 color:'#fff',
                 backgroundColor:'#4CAC3EB2',
@@ -163,66 +153,60 @@ const Subs = ({heading,title,onclick,type,rightIcon,image,imgType,ranking}) => {
                 fontFamily:"Balow",
                 fontWeight:700,
                 width:'50%',
-                // position:'absolute',
+                // position:'absolute'
                 marginLeft:'auto',
                 marginRight:'auto'
                 }}>
                 EcoPoint Level Entry
              </div>
-            <div style={{display:'flex'}}>
+            <div style={{display:'flex',justifyContent:'space-between'}}>
                 <div style={{display:'flex',gap:25,alignItems:'center'}}>
-                <div style={{
-                    height:40,
-                    width:40,
-                    backgroundColor:'#00B07426',
-                    borderRadius:20,
-                    justifyContent:'center',
-                    alignItems:'center',
-                    display: 'flex',
-                }}>
-               <LocalParkingIcon sx={{margin:'auto',color:'#4CAC3E',flex:1}}/>
+                <div className='agent-stat-button-icon-div-owner'>
+                <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                    height="25px"
+                    width="25px"
+                    >
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <path d="M7 20V4h5.5a4 4 0 010 9H7" />
+                    </svg>
                 </div>
                     <div style={{fontWeight:'700',fontSize:20}}> <span style={{color:'#B08C4F',fontSize:22,fontWeight:'700'}}>200</span> pts</div>
                 </div>
-                <WorkspacePremiumIcon sx={{
-                    color:'#4CAC3E',
-                    height:80,
-                    width:80,
-                    position:'absolute',
-                    right:0,
-                    top:1,
-                }}/>
+                <img src={standardTrophy} alt='' style={{height:20,width:25}}/>
             </div>
             <div style={{display:'flex',justifyContent:'space-between',paddingTop:5,alignItems:'center'}}>
                 <div style={{display:'flex',gap:25,alignItems:'center'}}>
-                <div style={{
-                    height:40,
-                    width:40,
-                    backgroundColor:'#00B07426',
-                    borderRadius:20,
-                    justifyContent:'center',
-                    alignItems:'center',
-                    display: 'flex',
-                }}>
-               <PeopleIcon sx={{margin:'auto',color:'#4CAC3E',flex:1}}/>
+                <div className='agent-stat-button-icon-div-owner'>
+                <svg
+                    fill="#00A389"
+                    viewBox="0 0 16 16"
+                    height="25px"
+                    width="25px"
+                    >
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" />
+                    </svg>
                 </div>
                     <div style={{fontWeight:'700',fontSize:20}}> <span style={{color:'#4CAC3E',fontSize:22,fontWeight:'700'}}>100</span></div>
                 </div>
                 <div style={{display:'flex',gap:10,alignItems:'center'}}>
-                <div style={{
-                    height:30,
-                    width:30,
-                    backgroundColor:'#00B07426',
-                    borderRadius:15,
-                    justifyContent:'center',
-                    alignItems:'center',
-                    display: 'flex',
-                }}>
-               <ArrowUpward sx={{margin:'auto',color:'#4CAC3E',flex:1}}/>
-                </div>
+                <div className='agent-stat'>
+                    <svg
+                        viewBox="0 0 1024 1024"
+                        fill="#00A389"
+                        height="25px"
+                        width="25px"
+                        >
+                        <path d="M868 545.5L536.1 163a31.96 31.96 0 00-48.3 0L156 545.5a7.97 7.97 0 006 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z" />
+                        </svg>
+                    </div>
                     <span style={{color:'#A3A3A3',fontSize:18,fontWeight:'700'}}>4%(30 days)</span>
                 </div>
-
                 
             </div>
              </div>
