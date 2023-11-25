@@ -1,0 +1,170 @@
+.below-admin-listing{
+    min-height: 55px;
+    max-width: 361px;
+    border-radius: 10px;
+    background-color: #FEFEFD;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.below-admin-listing-button{
+    background-color: transparent;
+    border: none;
+    justify-content: center;
+    align-self: center;
+    background-color: black;
+}
+.admin-button-tab-div {
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.25) */
+    align-items: center;
+    min-height: 55px;
+    max-width: 361px;
+    background-color: #FEFEFD;
+    justify-content: center;
+    align-self: center;
+    border-radius: 10px;
+
+}
+.admin-button-tab-div button {
+    border: none;
+    padding: 5px 50px;
+    min-height: 55px;
+    max-width: 361px;
+    background-color: #FEFEFD;
+    color: rgba(0, 0, 0, 1);
+}
+.admin-button-tab-div .sactive {
+    border-bottom: 2px solid rgba(0, 176, 116, 1);
+}
+.admin-button-tab-div-button {
+    color: rgba(0, 0, 0, 1);
+}
+.listing-actions-div-for-admin{
+    /* margin-top: 30px; */
+    display: grid;
+    grid-template-columns: min-content min-content;
+    gap: 15px;
+}
+.cohort-demographic-pie-chart {
+    display: flex;
+    max-height: 200px !important;
+    margin: auto;
+}
+.agent-demographic-pie{
+    margin: auto;
+}
+.see-more-on-pie-chart{
+    text-align: end;
+    color: #4CAC3E;
+    font-family: 'Barlow', Courier, monospace;
+    font-weight: 400;
+}
+
+.edit-agent-name-div-admin {
+    border: 1px solid rgba(134, 134, 134, 0.5);
+    border-radius: 7px;
+    /* margin-top: 30px; */
+    padding-bottom: 5px;
+    height: 65px;
+    margin-top: -15px;
+    padding: 0px 0px 0px 30px;
+}
+
+
+.edit-agent-name-div-admin:focus,
+.listing-search-input:focus,
+.training-modal-input-div input:focus {
+    outline: none !important;
+}
+.agent-edit-input-grid-div-admin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 35px;
+}
+.admin-edit-password{
+    display: flex;
+    border: 1px solid rgba(134, 134, 134, 0.5);
+    border-radius: 7px;
+    padding-bottom: 5px;
+    height: 65px;
+    margin-top: -15px;
+    padding: 0px 10px 0px 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.admin-edit-password-input:focus{
+    outline: none !important;
+}
+.admin-edit-password-input{
+    border: none !important;
+}
+.admin-add-photo-btn{
+    height: 80%;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #D9D9D959;
+    justify-content: center;
+    align-items: center;
+}
+.admin-uploadBtn{
+    margin: auto;
+    display: flex;
+    /* justify-content: center;
+    align-self: center; */
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5px;
+}
+.admin-btn-add-admin{
+    height: 50px;
+    background-color: #4CAC3E;
+    border-radius: 10px;
+    width: 100px;
+    font-weight: 600;
+    color: #FEFEFD;
+    outline: none;
+    border: none;
+}
+.left-section{
+    font-weight: 400;
+    color: #000000;
+    size: 19px;
+}
+.admin-table-div {
+    background-color: white;
+    border-radius: 10px;
+    /* padding-top: 20px; */
+    margin-top: 20px;
+}
+.agent-listing-row-status-div{
+    background-color: #00B07426;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50px;
+    color: #000000;
+    font-weight: 400;
+    padding-top: 7px;
+    margin-top: -10px;
+}
+.div-del-edit{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.admin-dasboard-chart{
+    /* max-height: 259px; */
+}
+@media(max-width: 510px) {
+    .edit-agent-name-div-admin{
+        padding-bottom: 15px !important;
+    }
+    .agent-edit-input-grid-div-admin {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        margin-top: 10px;
+    }
+}
