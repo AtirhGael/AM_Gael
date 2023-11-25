@@ -1,19 +1,69 @@
+.agent-stat-button-icon-div-two {
+    width: 40px;
+    height: 40px;
+    background: #00B07426;
+    border-radius: 50%;
+}
+.trash-pickup-table-view-button {
+    background: rgba(76, 172, 62, 1);
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    color: white;
+    padding: 4px 25px;
+    border: none;
+    font-style: 'Barlow';
+}
+.admin-view-button {
+    background: rgba(76, 172, 62, 1);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    color: white;
+    /* padding: 4px 25px; */
+    border: none;
+    height: 45px;
+    width: 120px;
+
+}
 .subs-text{
-    font-family: 'Barlow', sans-serif;
-    font-size: 17px;
-    color: black;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    /* margin-bottom: 5px; */
 }
 .heading-text{
     font-family: 'Barlow', sans-serif;
-    font-size: 17px;
+    font-size: 26px;
     color: black;
     font-weight: 500;
+   
+}
+.white-box{
+    background: rgba(254, 254, 253, 1);
+    border-radius: 15px;
+    margin-top: 20px;
+    min-height: 259px;
 }
 .subs-box{
     background: rgba(254, 254, 253, 1);
     border-radius: 15px;
     padding: 10px 0px 10px 10px;
+}
+.subs-box-with-image{
+    background: rgba(254, 254, 253, 1);
+    border-radius: 15px;
+    /* padding: 10px 0px 10px 10px; */
+}
+.subs-box-ecopoint{
+    background: rgba(254, 254, 253, 1);
+    border-radius: 15px;
+    padding: 6px 0px 10px 10px;
 }
 .card-title{
     font-family: 'Barlow', sans-serif;
@@ -28,11 +78,53 @@
     font-weight: 400;
     
 }
+.listing-table-placeholder-image {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+
+}
 .flex-container {
     display: flex;
     background-color: white !important;
     position: relative; /* Necessary to position child elements */
   }
+  .with-bottom-layer {
+    background: rgba(254, 254, 253, 1);
+    border-radius: 15px;
+    padding: 10px 10px 20px 10px;
+}
+.with-bottom-layer ::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px; 
+    background-color: #4CAC3E;
+    /* border-radius: 15px; */
+    /* border-top-right-radius: 20px; */
+}
+.stat-section-div-for-ecoservices {
+    background: rgba(254, 254, 253, 1);
+    border-radius: 15px;
+    /* padding: 10px 10px 20px 10px; */
+}
+
+  .agent-listing-see-all-button {
+    justify-self: end;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0px;
+    background: rgba(76, 172, 62, 1);
+    border-radius: 10px;
+    color: rgba(254, 254, 253, 1);
+    border: none;
+    width: 130px;
+    height: 40px;
+    padding: 0px;
+}
   
   .centered-box {
     /* background-color: black; */
