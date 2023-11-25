@@ -155,6 +155,9 @@
     flex-direction: row;
     gap: 10px;
 }
+.admin-dasboard-chart{
+    /* max-height: 259px; */
+}
 @media(max-width: 510px) {
     .edit-agent-name-div-admin{
         padding-bottom: 15px !important;

@@ -2,8 +2,9 @@ import React, { Children } from 'react'
 import 'chart.js';
 import "chartjs-plugin-datalabels";
 import { Line, Pie , } from 'react-chartjs-2';
+import { Grid } from '@mui/material';
+
 import ButtonDropdown from './ButtonDropdown';
-import { LineChart } from '@mui/x-charts/LineChart';
 
 function HomeCharts({marginTop,type,calender,seeDetails}) {
     const dataOne = {
@@ -17,16 +18,57 @@ function HomeCharts({marginTop,type,calender,seeDetails}) {
     };
     const datatwo = {
         labels: ['Mon', 'Tue','Wed','Thu','Fri','Sat','Sun'],
-        datasets: [{
-            data: [65, 59, 80, 81, 56, 55, 40],
-            backgroundColor: ['#2D9CDB', '#35BFEE'],
-            hoverBackgroundColor: ['#2D9CDB', '#35BFEE'],
-            borderWidth: 0,
-            fill: false,
-            // borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1,
-            
-        }],
+        // label: 'Filled',
+        // backgroundColor:'red',
+        datasets: [
+            {
+              label: 'Frequencies',
+              data: [10, 25, 50, 80, 18, 27, 50],
+              fill: true,
+              backgroundColor: '#CEEAFE',
+              borderColor: '#0F9CFF',
+              borderWidth: 2,
+            },
+          ],
+       
+    };
+    const lineOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+        plugins: {
+            legend: {
+              display: false,
+            },
+            datalabels: {
+                color: 'transparent'
+            },
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+                stepSize: 25,
+                min: 0,
+                max: 100,
+            },
+            grid: {
+                display: false, 
+                drawBorder: false,
+            },
+            border: {
+                display: false,
+            }
+          },
+          x: {
+            grid: {
+                display: false, 
+                drawBorder: false,
+            },
+            border: {
+                display: false,
+            }
+          }
+        },
     };
 
     const donutOptions = {
@@ -101,16 +143,18 @@ function HomeCharts({marginTop,type,calender,seeDetails}) {
 
           </div>
         ):(type === 'lineChart')?(
-            <div className='home-div-with-cart' style={{marginTop:marginTop}}>
-            <div className='line-chart'>
-            <p style={{fontWeight:'500',fontFamily:'Barlow'}}>Performance</p>
-                <Line  
+            <Grid item  className='cohort-demographic-each'>
+            <div className='cohort-demographic-each-stat-div'>
+                <p>Performance</p>
+                <div style={{ height: '200px' }}>
+                    <Line 
                     data={datatwo} 
-                    options={donutOptions} 
                     className='agent-demographic-pie-chart'
-                />
+                    options={lineOptions}
+                    />
+                    </div>
             </div>
-        </div>
+        </Grid>
         ):null}
                   
                 

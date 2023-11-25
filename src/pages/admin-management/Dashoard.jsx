@@ -1,4 +1,4 @@
-import { Grid, Stack,Box } from '@mui/material'
+import { Grid, Stack } from '@mui/material'
 import React,{useState} from 'react'
 import ButtonDropdown from '../../components/ButtonDropdown'
 import BlueButtonGainLossCard from '../../components/BlueButtonGainLossCard'
@@ -11,7 +11,13 @@ import searchicon from '../../assets/icons/search.svg'
 import filtericon from '../../assets/icons/filter_list.svg'
 import TableLayout from '../../components/TableLayout'
 import ThreeDotsDropdown from '../../components/ThreeDotsDropdown'
-import ImageNameGrid from '../../components/ImageNameGrid'
+import Gift from '../../assets/icons/celebrate.svg'
+import deleteicon from '../../assets/icons/delete.svg';
+import editIcon from '../../assets/icons/editIcon.svg';
+import { Menu,MenuItem } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import threedot from '../../assets/icons/more_horiz.svg';
+
 
 export default function AdminManagemtDashoard() {
     const[isTrashAgentModalVisible, setIsTrashAgentModalVisible] = useState(false)
@@ -21,6 +27,17 @@ export default function AdminManagemtDashoard() {
     const [endSubscriptionModalVisible,setIsEndSubscriptionModalVisible] = useState(false)
     const [deleteModalVisible,setIsDeleteModalVisible] = useState(false)
     const [page,setPage] =useState('incoming-request-listing')
+
+    const navigate = useNavigate()
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleOpenMenu = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    const handleCloseMenu = () => {
+      setAnchorEl(null);
+    };
   return (
     <>
       <Stack direction="horizontal" style={{justifyContent:'space-between'}}>
@@ -67,8 +84,8 @@ export default function AdminManagemtDashoard() {
                 </Grid>
             </Grid>
 
-            <Grid container spacing={1.5}>
-                <Grid item xs={12} lg={6} md={6}>
+            <Grid container spacing={1.5} paddingBottom={2}>
+                <Grid item xs={12} lg={6} md={6}  className='admin-dasboard-chart'>
                     <HomeCharts
                     type={'lineChart'}
                     />
@@ -78,10 +95,11 @@ export default function AdminManagemtDashoard() {
                         <div style={{
                             padding:20,
                             gap:5,
-                            display:'flex'
+                            display:'flex',
+                            alignItems:'center'
                         }}>
                             <span style={{fontWeight:500,fontSize:20,lineHeight:1,fontStyle:'Barlow'}}>Top 5 performance admin</span>
-                            <span>name</span>
+                            <img alt='' src={Gift} />
                         </div>
 
                     
@@ -145,7 +163,7 @@ export default function AdminManagemtDashoard() {
                                         className='agent-listing-see-all-button'
                                         onClick={() => {
                                             // setPage('agent-listing');
-                                            navigate('/owner-listing');
+                                            navigate('/admin-management/admin-listing');
                                         }}
                                     >
                                         See all
@@ -163,12 +181,18 @@ export default function AdminManagemtDashoard() {
                             <div className='table-green-text-status-div'>John Peterson</div>,
                             <div style={{color:'#00B074',fontWeight:'400',fontFamily:'Barlow'}}>Booking Manager</div>,
                             
-                            <ThreeDotsDropdown  
-                                section={'admin-management'}
-                                setIsEndSubscriptionModalVisible={setIsEndSubscriptionModalVisible}
-                                setIsDeleteModalVisible={setIsDeleteModalVisible}
-                                setIsSubscriptionDaysModalVisible={setIsSubscriptionDaysModalVisible}
-                            />
+                            <div className='div-del-edit'>
+                            <div >
+                                <img src={deleteicon} alt='Delete Icon' className='agent-listing-delete-icon'></img>
+                            </div>
+                                <div>
+                                <img src={editIcon} alt='Delete Icon' className='agent-listing-delete-icon'></img>
+                                </div>
+                                <button className='agent-listing-action-button' onClick={handleOpenMenu}>
+                                    <img src={threedot} alt='Three Dots Icon' className='agent-listing-three-dots-icon'></img>
+                                </button>
+                               
+                            </div>
                         ],
                     ]}
                     dataObject={{name: 'John'}}
@@ -192,7 +216,14 @@ export default function AdminManagemtDashoard() {
             setIsTrashDetailsModalVisible={setIsTrashAgentModalVisible}
             page={'agent-profile'}
             />
-        
+                                <Menu
+                                anchorEl={anchorEl}
+                                open={Boolean(anchorEl)}
+                                onClose={handleCloseMenu}
+                                >
+                                <MenuItem onClick={navigate}>View Profile</MenuItem>
+                                <MenuItem onClick={() => setIsSelectAssignModalVisible(true)}>Edit Prifile</MenuItem>
+                                </Menu>
     </>
   )
 }

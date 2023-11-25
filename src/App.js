@@ -37,6 +37,8 @@ import IndexRequest from './pages/owner-management/subScreens/activeRequests';
 import Request from './pages/owner-management/subScreens/Request';
 import AdminManagemtDashoard from './pages/admin-management/Dashoard';
 import AddAdmin from './pages/admin-management/AddAdmin';
+import AdminListing from './pages/admin-management/AdminListing';
+import AdminProfile from './pages/admin-management/AdminProfile';
 
 
 
@@ -93,6 +95,8 @@ const App = () => {
               <Route path='active-request' element={<Request/>}/>
               <Route path='/admin-management' element={<AdminManagemtDashoard/>}/>
               <Route path='/admin-management/add-admin' element={<AddAdmin/>}/>
+              <Route path='/admin-management/admin-listing' element={<AdminListing/>}/>
+              <Route path='/admin-management/admin-Prfile' element={<AdminProfile/>}/>
 
             </Route>
           </Routes>
