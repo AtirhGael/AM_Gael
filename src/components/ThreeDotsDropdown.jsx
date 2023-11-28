@@ -16,7 +16,8 @@ const ThreeDotsDropdown = ({
   section,
   setIsSelectAssignModalVisible,
   setIsTrashDetailsModalVisible,
-  setIsCancellationReasonModalVisible
+  setIsCancellationReasonModalVisible,
+  onOpenEdit
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -56,7 +57,7 @@ const ThreeDotsDropdown = ({
               onClose={handleCloseMenu}
             >
               <MenuItem onClick={navigate}>View Profile</MenuItem>
-              <MenuItem onClick={() => setIsSelectAssignModalVisible(true)}>Edit Prifile</MenuItem>
+              <MenuItem onClick={onOpenEdit}>Edit Profile</MenuItem>
             </Menu>
         </div>
       ) : null}
@@ -124,7 +125,7 @@ const ThreeDotsDropdown = ({
           (page === 'dashboard-add-admin') ?
             <div>
               <MenuItem onClick={navigate}>View Profile</MenuItem>
-              <MenuItem onClick={() => setIsSelectAssignModalVisible(true)}>Edit Prifile</MenuItem>
+              <MenuItem onClick={()=>onOpenEdit()}>Edit Profile</MenuItem>
             </div> :
               null //new pages go here
         : null

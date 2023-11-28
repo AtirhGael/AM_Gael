@@ -158,6 +158,40 @@
 .admin-dasboard-chart{
     /* max-height: 259px; */
 }
+.blue-circle-div-admin {
+    width: 30px;
+    height: 30px;
+    background: rgba(45, 156, 219, 0.2);
+    border-radius: 50%;
+}
+.agent-stat-button-icon-admin {
+    height: 14px;
+    width: 14px;
+    margin: 7.5px;
+}
+.admin-listing-row-status-div{
+    color: #00B074;
+    font-weight: 600;
+    font-size: 18px;
+
+}
+.admin-booking-table-btn{
+    background-color: #4CAC3E;
+    height: 33px;
+    width: 99px;
+    border-radius: 15px;
+    justify-content: center;
+    color:#FEFEFD;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+}
+.image-name-date-id-grid-div-admin {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
 @media(max-width: 510px) {
     .edit-agent-name-div-admin{
         padding-bottom: 15px !important;

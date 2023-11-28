@@ -39,6 +39,7 @@ import AdminManagemtDashoard from './pages/admin-management/Dashoard';
 import AddAdmin from './pages/admin-management/AddAdmin';
 import AdminListing from './pages/admin-management/AdminListing';
 import AdminProfile from './pages/admin-management/AdminProfile';
+import AllBookings from './pages/admin-management/AllBookings';
 
 
 
@@ -97,6 +98,7 @@ const App = () => {
               <Route path='/admin-management/add-admin' element={<AddAdmin/>}/>
               <Route path='/admin-management/admin-listing' element={<AdminListing/>}/>
               <Route path='/admin-management/admin-Prfile' element={<AdminProfile/>}/>
+              <Route path='/admin-management/all-bookings' element={<AllBookings/>}/>
 
             </Route>
           </Routes>
