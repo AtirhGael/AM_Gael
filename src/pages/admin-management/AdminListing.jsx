@@ -19,6 +19,7 @@ import ThreeDotsDropdown from '../../components/ThreeDotsDropdown';
 import cancellationimage from '../../assets/images/news (10) 1.svg'
 import SuspendAgentModal from '../../components/SuspendAgentModal';
 import TableLayout from '../../components/TableLayout';
+import { useNavigate } from 'react-router-dom';
 
 
 const ActiveTable = ({type}) =>{
@@ -38,6 +39,7 @@ export default function AdminListing() {
     const [search,setSearch] = useState('')
     const[isSuspendAgentModalVisible, setIsSuspendAgentModalVisible] = useState(false)
 
+    const navigate = useNavigate()
     const [anchorEl, setAnchorEl] = useState(null);
     const page = 'owner-listing'
     const section = 'owner-management'
@@ -120,7 +122,7 @@ export default function AdminListing() {
                             page={'dashboard-add-admin'}
                             section={section}
                             setIsCancellationReasonModalVisible={setIsCancellationReasonModalVisible}
-                            navigate={()=>navigate('/owner-profile')}
+                            navigate={()=>navigate('/admin-management/admin-Prfile')}
                             setIsSelectAssignModalVisible={setIsSuspendAgentModalVisible}
                             setIsDeleteModalVisible={setIsDeleteModalVisible}
                             />
